@@ -1,0 +1,13 @@
+release/inicio.o
+release/main.o
+release/barco.o
+release/crucero.o
+release/destructor.o
+release/gestor.o
+release/juego.o
+release/lanchacom.o
+release/mapa.o
+release/portaaviones.o
+release/submarino.o
+release/qrc_images.o
+release/moc_inicio.o
