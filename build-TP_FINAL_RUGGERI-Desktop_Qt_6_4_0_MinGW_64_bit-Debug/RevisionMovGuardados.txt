@@ -1,5 +1,0 @@
-Jugadas: 20
-Movimientos Player: 
-Cantidad de lanchas aliadas: 0
-Movimientos Maquinas: 
-Cantidad de lanchas enemigas: 0
