@@ -1,0 +1,19 @@
+Nombre: fRANCO
+Tamaño: 7
+Cantidad de barcos: 2
+Posicion X: 2
+Posicion Y: 2
+Orientacion: H
+Barco: P
+Posicion X: 2
+Posicion Y: 3
+Orientacion: H
+Barco: P
+Posicion X: 4
+Posicion Y: 1
+Orientacion: H
+Barco: P
+Posicion X: 5
+Posicion Y: 2
+Orientacion: H
+Barco: P
