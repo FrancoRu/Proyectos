@@ -1,0 +1,200 @@
+body{
+    background-image: url("../resources/bodybackground.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-width: 720px;
+    min-height: 720px;
+}
+
+aside{
+    float: left;
+    width: 20%;
+}
+section{
+    float: right;
+    width: 60%;
+    margin-right: 10%;
+}
+footer{
+    clear: both;
+}
+.divTable{
+    width: 100%;
+}
+.divTable table{
+    width: 100%;
+}
+
+.divTable table thead{
+    width: 100%;
+}
+/*
+#readLayout .divTable table thead tr th{
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 15%;
+    box-shadow: 4px 4px rgba(173, 11, 11, 0.699);;
+}*/
+
+section .layouts{
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+}
+section div input{
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+}
+
+section div label{
+    padding: 10px;
+    margin: 10px;
+}
+section div #btnSubmitInfo{
+    margin-bottom: 0;
+    width: 100%;
+}
+input[type= "submit"]{
+    max-width: 100px;
+}
+input[type= "button"]:hover {
+  background-color: #0069d9;
+}
+  
+input[type= "button"]:active {
+  background-color: #005cbf;
+  transform: translateY(2px);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+input[type="button"],
+select, option {
+    border-radius: 10px;
+    width: 85%;
+    padding: 10px;
+    margin: 10px;
+    display: block;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.151);
+    border: 2px solid black;
+    border-radius: 5px;
+}
+#updateDeleteLayout{
+    display: flex;
+    flex-wrap: wrap;
+}
+#updateDeleteLayout fieldset {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+}
+  
+table td, table th {
+  padding: 8px;
+  text-align: left;
+}
+  
+table td, tr{
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+table th{
+  background-color: rgba(8, 6, 6, 0.971);
+  border-bottom: 2px solid #ddd;
+  border-collapse: collapse;
+  color: white;
+}
+table td:first-child, table th:first-child {
+  border-left: none;
+}
+ 
+table td:last-child, table th:last-child {
+  border-right: none;
+}
+ 
+table tr:not(:first-child) td {
+  border-top: 1px solid #ddd;
+}
+tr:nth-child(even){
+  background-color: rgba(51, 29, 29, 0.644);
+}
+tr:not(:has(th)):hover{
+   background-color: rgba(235, 11, 11, 0.603);
+}
+div{
+    background-color: rgba(252, 249, 249, 0.466);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.login {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 25%;
+    padding: 2%;
+    margin: 2%;
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+  
+a {
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+} 
+
+section .layouts form{
+    width: 70%;
+    padding: 10px;
+    margin: 10px;
+} 
+form input[type="date"]{
+    max-width: 40%;
+}
+form select{
+    float: left;
+    max-width: 40%;
+}
+input[type="submit"]{
+    float: right;
+    max-height: 40px;
+}
+#deleteLayout{
+    display: flex;
+}
+
+#deleteLayout input[type="submit"]{
+    margin-top: 8%;
+}
+#deleteLayout fieldset{
+    justify-items: center;
+    display: inline-block;
+    width: 20%;
+    margin-left: 10%;
+    max-height: 10px;
+}
+form label{
+    display: inline-block;
+    width: 80%;
+}
+#updateLayout input[type="submit"]{
+    margin-top: 6%;
+}

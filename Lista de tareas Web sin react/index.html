@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="Styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>
+            My app
+        </h1>
+    </header>
+    <div id="layoutsLogin">
+      <div class="login" id="loginUser">
+        <form method="get" action="">
+          <label>User: </label>
+          <input type="email" placeholder="user@mail.com" id="emailUser">
+          <label>Password: </label>
+          <input type="password" placeholder="password" id="loginPass">
+        </form>
+        <a href="#" data-target="recoverPass" id="recPass">Forgot your password?</a>
+        <a href="#" data-target="createUser" id="creUser">create account</a>
+        <input type="submit" value="Log in" id="btnSubmit">
+      </div>
+      <div class="login" id="createUser">
+        <form method="post"></form>
+          <label>User Name: </label>
+          <input type="text" placeholder="Name User">
+          <label>Password: </label>
+          <input type="password" placeholder="User Password">
+          <label>Repeat password: </label>
+          <input type="password" placeholder="Repeat User Password">
+          <label>email: </label>
+          <input type="email" placeholder="user@mail.com">
+        </form>
+        <input type="submit" value="Create User" id="btnSubmitNewUser">
+      </div>
+      <div class="login" id="recoverPass">
+        <form method="get"></form>
+        <label>Enter your email</label>
+          <input type="email" placeholder="email User">
+        </form>
+        <input type="submit" value="Recover Password" id="btnSubmitRecPass">
+      </div>
+    </div>
+    <aside>
+        <h1>ACA VAN LOS CRUD</h1>
+        <div class="layouts" id="CRUD">
+            <input type="button" value="CREATE"  id="create" data-target = "createLayout">
+            <input type="button" value="UPDATE"  id="update" data-target = "updateLayout">
+            <input type="button" value="READ"  id="read" data-target = "readLayout">
+            <input type="button" value="DELETE"  id="delete" data-target = "deleteLayout">
+        </div>
+    </aside>
+    <section>
+        <div  class="layouts" id="createLayout">
+            <form method="post" action="">
+                <label>Name: </label>
+                <input type="text" placeholder="Name User" id="inputName">
+                <label>Project: </label>
+                <input type="text" placeholder="Name Project" id="inputNameProject">
+                <label>Person name: </label>
+                <input type="text" placeholder="responsible person name" id="inputResponsiblePersonName">
+                <label>deadline: </label>
+                <input type="date" id="inputDeadline">
+                <label>importance: </label>
+                <select id="inputImportance">
+                    <option>Low </option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+                <input type="submit" value="submit" id="btnSubmitInfo">    
+            </form>
+        </div>
+        <div  class="layouts" id="readLayout">
+            <div class="divTable">
+                <table>
+                    <thead>
+                      <tr>
+                        <th>Created by</th>
+                        <th>Responsible Person</th>
+                        <th>Project</th>
+                        <th>Deadline</th>
+                        <th>Importance</th>
+                        <th>State</th>
+                      </tr>
+                    </thead>
+                    <tbody class="bodyTable">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div  class="layouts" id="updateDeleteLayout">
+            <fieldset>
+              <legend>
+                <label>Created by:</label>
+              </legend>
+              <label></label>  
+            </fieldset>
+          
+            <fieldset>
+              <legend>
+                <label>Responsible Person:</label>
+              </legend>
+              <label></label>
+            </fieldset>
+          
+            <fieldset>
+              <legend>
+                <label>Project:</label>
+              </legend>
+              <label></label>
+            </fieldset>
+          
+            <fieldset>
+              <legend>
+                <label>Deadline:</label>
+              </legend>
+              <label></label>
+            </fieldset>
+          
+            <fieldset>
+              <legend>
+                <label>Importance:</label>
+              </legend>
+              <label></label>
+            </fieldset>
+        </div>
+        <div  class="layouts" id="updateLayout">
+            <fieldset>
+                <legend>
+                  <label>State:</label>
+                </legend>
+                <select id="state" name="state">
+                  <option>not started</option>
+                  <option>under development</option>
+                  <option>completed</option>
+                </select>
+            </fieldset>
+            
+            <input type="submit" name="submit" value="Modify">
+        </div>
+        <div  class="layouts" id="deleteLayout">
+          <form method="POST">
+            <fieldset>
+                <legend>
+                    <label>State:</label>
+                </legend>
+                <label></label>
+            </fieldset>
+            <input type="submit" value="Delete">
+          </form>
+        </div>
+    </section>
+    <footer>
+        <p>ljksbnafkljsabgflsa</p>
+    </footer>
+    <script src="JS/app.js" onload="ocultar()"></script>
+</body>
+</html>
