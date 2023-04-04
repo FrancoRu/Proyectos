@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <RCC>
     <qresource prefix="/">
         <file>images/world-of-warships-legends-llega-a-la-consola-con-acceso-temprano-en-todo-el-mundo-frikigamers.com_.jpg-1024x576.jpg</file>
@@ -5,3 +6,12 @@
         <file>images/ImgDefeatRev.jpg</file>
     </qresource>
 </RCC>
+=======
+<RCC>
+    <qresource prefix="/">
+        <file>images/world-of-warships-legends-llega-a-la-consola-con-acceso-temprano-en-todo-el-mundo-frikigamers.com_.jpg-1024x576.jpg</file>
+        <file>images/ImgVictoriRev.jpg</file>
+        <file>images/ImgDefeatRev.jpg</file>
+    </qresource>
+</RCC>
+>>>>>>> 3c4ee044a1ad98fad549525b4fa2ea720b6e3add

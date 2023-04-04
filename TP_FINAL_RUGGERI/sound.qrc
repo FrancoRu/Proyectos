@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 <RCC>
     <qresource prefix="/new/prefix1"/>
 </RCC>
+=======
+<RCC>
+    <qresource prefix="/new/prefix1"/>
+</RCC>
+>>>>>>> 3c4ee044a1ad98fad549525b4fa2ea720b6e3add
