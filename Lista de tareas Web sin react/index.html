@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="Styles/main.css">
+    <script src="JS/app.js" onload="ocultar()" defer></script>
 </head>
 <body>
     <header>
@@ -28,20 +29,20 @@
       <div class="login" id="createUser">
         <form method="post"></form>
           <label>User Name: </label>
-          <input type="text" placeholder="Name User">
+          <input type="text" placeholder="Name User" id="nameCreateUser">
           <label>Password: </label>
-          <input type="password" placeholder="User Password">
+          <input type="password" placeholder="User Password" id="passCreateUser">
           <label>Repeat password: </label>
-          <input type="password" placeholder="Repeat User Password">
+          <input type="password" placeholder="Repeat User Password" id="repeatPassCreateUset">
           <label>email: </label>
-          <input type="email" placeholder="user@mail.com">
+          <input type="email" placeholder="user@mail.com" id="emailCreateUser">
         </form>
         <input type="submit" value="Create User" id="btnSubmitNewUser">
       </div>
       <div class="login" id="recoverPass">
         <form method="get"></form>
         <label>Enter your email</label>
-          <input type="email" placeholder="email User">
+          <input type="email" placeholder="email User" id="btnRecoverPass">
         </form>
         <input type="submit" value="Recover Password" id="btnSubmitRecPass">
       </div>
@@ -86,6 +87,7 @@
                         <th>Deadline</th>
                         <th>Importance</th>
                         <th>State</th>
+                        <th>Select</th>
                       </tr>
                     </thead>
                     <tbody class="bodyTable">
@@ -99,35 +101,42 @@
               <legend>
                 <label>Created by:</label>
               </legend>
-              <label></label>  
+              <label id="createdBy"></label>  
             </fieldset>
           
             <fieldset>
               <legend>
                 <label>Responsible Person:</label>
               </legend>
-              <label></label>
+              <label  id="responsiblePerson"></label>
             </fieldset>
           
             <fieldset>
               <legend>
                 <label>Project:</label>
               </legend>
-              <label></label>
+              <label id = "project"></label>
             </fieldset>
           
             <fieldset>
               <legend>
                 <label>Deadline:</label>
               </legend>
-              <label></label>
+              <label id="deadline"></label>
             </fieldset>
           
             <fieldset>
               <legend>
                 <label>Importance:</label>
               </legend>
-              <label></label>
+              <label id="importance"></label>
+            </fieldset>
+
+            <fieldset>
+              <legend>
+                <label>Id:</label>
+              </legend>
+              <label id="idTask"></label>
             </fieldset>
         </div>
         <div  class="layouts" id="updateLayout">
@@ -142,23 +151,22 @@
                 </select>
             </fieldset>
             
-            <input type="submit" name="submit" value="Modify">
+            <input type="submit" name="submit" value="Modify" id="BtnModify">
         </div>
         <div  class="layouts" id="deleteLayout">
           <form method="POST">
             <fieldset>
                 <legend>
                     <label>State:</label>
+                    <label id="stateDelete"></label>
                 </legend>
-                <label></label>
             </fieldset>
-            <input type="submit" value="Delete">
+            <input type="submit" value="Delete" id="BtnDelete">
           </form>
         </div>
     </section>
     <footer>
         <p>ljksbnafkljsabgflsa</p>
     </footer>
-    <script src="JS/app.js" onload="ocultar()"></script>
 </body>
 </html>
