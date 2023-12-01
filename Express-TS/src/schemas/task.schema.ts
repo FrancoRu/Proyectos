@@ -1,24 +1,27 @@
 import { z } from 'zod'
-import mongoose from 'mongoose'
 import { Importance, State } from '../types/types'
+import mongoose from 'mongoose'
 
 export const createTaskSchema = z.object({
-  proyect: z
-    .string({
-      required_error: 'Proyect is required'
-    })
-    .min(1),
+  project: z.string().refine(
+    (value) => {
+      try {
+        mongoose.Types.ObjectId.createFromHexString(value)
+        return true
+      } catch (error) {
+        return false
+      }
+    },
+    {
+      message: 'Must be a valid ObjectId'
+    }
+  ),
   title: z
     .string({
       required_error: 'Title is required'
     })
     .min(1),
-  description: z.string(),
-  assignedTo: z
-    .string({
-      required_error: 'username responsible is required'
-    })
-    .min(1),
+  description: z.string().optional(),
   deadline: z.string().refine(
     (value) => {
       const parsedDate = new Date(value)
@@ -33,13 +36,36 @@ export const createTaskSchema = z.object({
   })
 })
 
+export const getTasksSchema = z.object({
+  project: z.string().refine(
+    (value) => {
+      try {
+        mongoose.Types.ObjectId.createFromHexString(value)
+        return true
+      } catch (error) {
+        return false // or throw error; depending on your preference
+      }
+    },
+    {
+      message: 'Must be a valid ObjectId'
+    }
+  )
+})
+
 export const updateTaskSchema = z.object({
-  proyect: z
-    .string({
-      required_error: 'Proyect is required'
-    })
-    .min(1)
-    .nullable(),
+  project: z.string().refine(
+    (value) => {
+      try {
+        mongoose.Types.ObjectId.createFromHexString(value)
+        return true
+      } catch (error) {
+        return false
+      }
+    },
+    {
+      message: 'Must be a valid ObjectId'
+    }
+  ),
   title: z
     .string({
       required_error: 'Title is required'
@@ -47,12 +73,6 @@ export const updateTaskSchema = z.object({
     .min(1)
     .nullable(),
   description: z.string().nullable(),
-  assignedTo: z
-    .string({
-      required_error: 'username responsible is required'
-    })
-    .min(1)
-    .nullable(),
   deadline: z
     .string()
     .refine(
@@ -76,17 +96,3 @@ export const updateTaskSchema = z.object({
     })
     .nullable()
 })
-
-export const objectIdSchema = z.string().refine(
-  (value) => {
-    try {
-      mongoose.Types.ObjectId.createFromHexString(value)
-      return true
-    } catch (error) {
-      return false
-    }
-  },
-  {
-    message: 'Must be a valid ObjectId'
-  }
-)

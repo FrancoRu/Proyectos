@@ -2,45 +2,56 @@ import TasksModel from '../models/task.models'
 import { UserToken } from '../types/types'
 import { Request, Response } from 'express'
 import { State, Importance } from '../types/types'
+import projectModel from '../models/project.model'
 
 interface RequestWithUserData extends Request {
   userData?: UserToken
 }
 
 export const getTasks = async (req: RequestWithUserData, res: Response) => {
+  const { project } = req.body
+
   const userId = req.userData?._id
 
   if (!userId) {
     return res.status(401).json({ message: 'Unauthorized' })
   }
   const tasks = await TasksModel.find({
+    project: project,
     user: userId
   })
   return res.json(tasks)
 }
 
 export const createTask = async (req: RequestWithUserData, res: Response) => {
-  const { proyect, title, description, assignedTo, deadline, importance } =
-    req.body
+  const { project, title, description, deadline, importance } = req.body
   if (Object.values(Importance).includes(importance)) {
     try {
+      const existingTitle = await TasksModel.findOne({
+        project: project,
+        title: title
+      })
+      if (existingTitle) {
+        const Project = await projectModel.findById(project)
+        return res.status(409).json({
+          message: `The title '${title}' already exists for in the project name '${Project?.nameproject}'`
+        })
+      }
       const userId = req.userData?._id
       const username = req.userData?.username
       if (!username || !userId) {
         return res.status(401).json({ message: 'Unauthorized' })
       }
       const newTask = new TasksModel({
-        proyect,
+        project,
         createdBy: username,
         user: userId,
         title,
         description,
-        assignedTo,
         deadline,
         importance,
         state: State.Finished
       })
-      console.log(newTask)
       const savedTask = await newTask.save()
       return res.status(201).json(savedTask)
     } catch (error: any) {

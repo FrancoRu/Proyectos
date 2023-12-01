@@ -18,16 +18,28 @@ export enum State {
 }
 
 export interface tasks {
-  proyect: string
-  createdBy: string
+  project: mongoose.Schema.Types.ObjectId
   user: mongoose.Schema.Types.ObjectId
+  createdBy: string
   title: string
   description?: string
-  assignedTo: string
   deadline: Date
   importance: Importance
 }
 
 export interface saveTasks extends tasks {
+  state: State
+}
+
+export interface project {
+  nameproject: string
+  createdBy: string
+  user: mongoose.Schema.Types.ObjectId
+  description?: string
+  deadline: Date
+  importance: Importance
+}
+
+export interface saveproject extends project {
   state: State
 }

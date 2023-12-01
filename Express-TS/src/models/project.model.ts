@@ -1,27 +1,22 @@
 import mongoose, { Schema, Document } from 'mongoose'
-import { saveTasks } from '../types/types'
+import { saveproject } from '../types/types'
 import { Importance, State } from '../types/types'
 
-export interface TaskDocument extends saveTasks, Document {}
+export interface projectDocument extends saveproject, Document {}
 
-const tasksSchema = new Schema<TaskDocument>(
+const projectsSchema = new Schema<projectDocument>(
   {
-    project: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'project',
+    nameproject: {
+      type: String,
       required: true
     },
     createdBy: {
       type: String,
-      require: true
+      required: true
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      required: true
-    },
-    title: {
-      type: String,
       required: true
     },
     description: {
@@ -48,6 +43,6 @@ const tasksSchema = new Schema<TaskDocument>(
 )
 
 // Define el modelo de mongoose
-const TasksModel = mongoose.model<TaskDocument>('Tasks', tasksSchema)
+const projectModel = mongoose.model<projectDocument>('project', projectsSchema)
 
-export default TasksModel
+export default projectModel

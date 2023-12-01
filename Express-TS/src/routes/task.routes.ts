@@ -7,21 +7,13 @@ import {
   updateTask
 } from '../controllers/tasks.controllers.ts'
 import { validateSchema } from '../middlewares/validate.middleware.ts'
-import {
-  createTaskSchema,
-  objectIdSchema,
-  updateTaskSchema
-} from '../schemas/task.schema.ts'
+import { createTaskSchema, updateTaskSchema } from '../schemas/task.schema.ts'
+import { objectIdSchema } from '../libs/validateId.libs.ts'
 import { authRequired } from '../middlewares/validateToken.ts'
 const router = Router()
 
-router.post(
-  '/task/',
-  authRequired,
-  validateSchema(createTaskSchema),
-  createTask
-)
-router.get('/task/', authRequired, getTasks)
+router.post('/task', authRequired, validateSchema(createTaskSchema), createTask)
+router.get('/task', authRequired, getTasks)
 router.get('/task/:id', authRequired, validateSchema(objectIdSchema), getTask)
 router.patch(
   '/task/:id',
